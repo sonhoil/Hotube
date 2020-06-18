@@ -33,7 +33,7 @@ app.use(compression())
 var db = mysql.createConnection({
   host     : 'localhost',
   user     : 'root',
-  password : 'ggthegame2',
+  password : '********',
   database : 'hotube'
 });
 db.connect();
