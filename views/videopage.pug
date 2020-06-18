@@ -1,0 +1,86 @@
+extends loginLayout
+
+block content
+ include mainbar
+  div.videoPageBox
+   div.LeftMenu 
+    div.LeftList 
+     a asdasd       
+   div.videoPageContainer
+    div.videoframe 
+     .player
+       video.player__video.viewer(src=`data:video/mp4;base64,`+videos)
+       .player__controls
+         .progress
+           .progress__filled
+         button.player__button.toggle(title='Toggle Play') &#x25BA;
+         button.timer.player__button 00:00
+         input.player__slider(type='range' name='volume' min='0' max='1' step='0.05' value='1')
+         select.player__slider.speed(name='playbackRate')
+           option(value='0.5') X 0.5
+           option(value='0.8') X 0.8
+           option(value='1' selected='selected') X 1
+           option(value='1.2') X 1.2
+           option(value='1.5') X 1.5
+           option(value='2') X 2
+         button.player__button(data-skip='-10') &laquo; 10s
+         button.player__button(data-skip='25') 25s &raquo;
+         button.fullscreen.player__button FULL 
+     .videodetail
+       div.videoname
+           p.videotitle=videoInfo.title
+           
+       div.videosub
+           p subscription
+           p 2
+           p 3
+     div.videouser
+      if(videoprofile)
+         img.profile(src=`data:image/png;base64,${videoprofile}`)
+      else
+         img.profile(src="../images/coding.jpg")
+         
+      div.videouserinfo
+          p.username=videoInfo.nickname
+     div.replysubmit
+             p.videodiscription=videoInfo.discription
+             form#replyform(action=`/videopage/${videoInfo.postID}`)(method="post")
+                if(image)
+                 img.profile(src=`data:image/png;base64,${image}`)
+                else
+                 img.profile(src="../images/coding.jpg")
+                if(login)
+                 input(type="text", name="reply")
+                 button(type='submit') 확인
+                else
+                 input(type="text", name="reply", placeholder="로그인이 필요합니다." disabled) 
+               
+     div#replys
+      each item in replys 
+       div.replybox
+            if(item.image)
+             img.profile(src=`data:image/png;base64,${item.image}`)
+             div
+              div.replyinfo 
+               h4=item.nickname
+               p.date=item.Date
+              div.replytext
+               p=item.reply
+            else
+              img.profile(src="../images/coding.jpg")
+              p=item.reply             
+   div.videoList
+       div.videotextContainer
+          p 다음동영상
+          p 자동재생
+       each item in videoList   
+        div.listframe
+             div.listimg
+                 img(src=`${item.thumnail}`)
+             div.listinfo
+                 h4=item.title
+
+  div
+
+
+  

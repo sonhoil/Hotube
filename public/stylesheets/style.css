@@ -1,0 +1,175 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+body {
+  overflow-y:scroll;
+  padding: 0px;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #f2f2f2;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.mainLogo{
+ font-size: 40px;
+ color: black;
+ text-decoration: none;
+
+}
+.mainBar{
+  position: fixed;
+  z-index :2020;
+  background-color: white;
+  height: 56px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  -webkit-box-shadow: 2px 1px 5px 2px rgba(0,0,0,0.55);
+  -moz-box-shadow: 2px 1px 5px 2px rgba(0,0,0,0.55);
+  box-shadow: 2px 1px 5px 2px rgba(0,0,0,0.55);
+}
+.CenterBar{
+  display: flex;
+  flex-direction: row;
+  
+}
+.SearchBox{
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  width: 500px;
+}
+.SearchForm{
+  padding-top: 10px;
+  display:flex;
+  flex-direction: row;
+  height: 30px;
+  width: 500px;
+}
+.SearchForm button{
+  width: 70px;
+  margin-left: 10px;
+}
+.searchBar{
+  width: 100%;
+}
+.LeftBar{
+  display: flex;
+  flex-direction: row;
+}
+.leftbarButton{
+  background-color: white; 
+  padding-right: 16px; 
+  font-size: 16px; 
+  cursor: pointer;
+  border:none;
+  outline: inherit;
+}
+.menuBar{
+  width: 74px;
+}
+.menuBar button{
+  width: 100%;
+  height: 100%;
+  font-size: 30px;
+}
+.RightBar{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 16px;
+}
+.BarIcon3 a{
+  font-size: 20px;
+}
+.BarIcon3{
+  justify-content: center;
+  align-items: center;
+  
+}
+.icon{
+  background-color: white;
+  color: black;
+  border: none;  
+  padding-right: 16px; 
+  font-size: 16px; 
+  cursor: pointer; 
+  outline: inherit;  
+}
+ul{
+  list-style-type : none;
+}
+
+.mainBody{
+  padding-top: 56px;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  left: 0;
+  background-color: #f2f2f2;
+ 
+}
+.LeftMenu{
+  position: fixed;
+  z-index :99999;
+  height: 100%;
+  width: 74px;
+  flex: 0.06;
+  background-color:  white;
+  -webkit-box-shadow: 0px 6px 5px 2px rgba(0,0,0,0.55);
+-moz-box-shadow: 0px 6px 5px 2px rgba(0,0,0,0.55);
+box-shadow: 0px 6px 5px 2px rgba(0,0,0,0.55);
+ 
+}
+.RightMenu{
+  margin-left: 80px;
+  padding: 10px;
+  flex: 0.7;
+  
+  
+}
+.videoContents{
+ 
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  gap: 15px;
+  align-items: center;
+  justify-content: left;
+}
+img{
+  width: 295px;
+}
+.videoDetail{
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+.video{
+  border-radius: 5px;
+  border: 1px solid #959595 ;
+  width: 290px;
+  background-color: #FFFCFC ;
+  margin: 5px;
+}
+.profile{
+  margin-top: 5px;
+  width: 40px;
+  height: 40px;
+  border-radius: 30px;
+  margin-right: 10px;
+  margin-left: 5px;
+}
+.listname{
+  display: flex;
+  flex-direction: column;
+}
+
+.thumnail{
+  height: 220px;
+  width: 290px;
+}

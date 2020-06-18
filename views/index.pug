@@ -1,0 +1,34 @@
+extends layout
+
+block content
+ include mainbar
+  div.mainBody
+   div.LeftMenu
+    ul
+      li.list1
+        i.fa.fa-video-camera
+      li.list2 
+        i.fa.fa-video-camera
+      li.list3 
+        i.fa.fa-video-camera
+   div.RightMenu
+    div.videoContents
+     each item in videos
+      div.video
+        img.thumnail(src=`${item.thumnail}`)
+        div.videoDetail
+         if(item.image)
+          a(href=`/userpage/_userpage_${item.userID}`)
+           img.profile(src=`data:image/png;base64,${item.image}`)
+
+           div.listname
+            a(href=`/videopage/${item.postID}`).videoName=item.title
+            a=item.nickname
+            a=item.date
+         else
+          a(href=`/userpage/_userpage`)
+           img.profile(src=`../images/coding.jpg`)
+           div.listname
+            a(href=`/videopage/${item.postID}`).videoName=item.title
+            a=item.nickname
+            a=item.date

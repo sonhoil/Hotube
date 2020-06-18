@@ -1,0 +1,19 @@
+extends loginLayout
+
+block content
+ include mainbar
+
+  div.main  
+    div.loginbox
+        if (message)
+          p #{message}
+        form(action="/login/login_process")(method="post")
+            input.inputs#inputID(type="text",name="email", placeholder="ID")
+            input.inputs#inputPassword(type="password",name="password", placeholder="Password")
+            button.inputs LOGIN
+        form(action="/login/register")
+          button.inputs2 SING IN
+ div
+
+            
+   

@@ -1,0 +1,306 @@
+@import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
+  body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    min-height: 100vh;
+    background-size: cover;
+  }
+  .videoPageBox{
+      display: flex;
+      flex-direction: row;
+  }
+  .videoPageContainer{
+      margin-top: 90px;
+      margin-left: 10px;
+      display: flex;
+      flex-direction: row;
+  }
+  .videodetail{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: space-between;
+  }
+  .videosub{
+      display: flex;
+      flex-direction: row;
+  }
+  .videouser{
+      display: flex;
+      flex-direction: row;
+     align-items: center;
+  }
+  .replysubmit form{
+        display:flex;
+        flex-direction:row;
+        width: 100%;
+        max-height: 45px;
+  }
+  .replysubmit input{
+    margin: 5px;
+    width: 100%;
+    max-height: 35px;
+  }
+  .replysubmit button{
+    margin: 5px;
+    width: 10%;
+    max-height: 35px;
+  }
+  .replybox{
+    display:flex;
+    flex-direction:row;
+  }
+  .videoList{
+    margin-top: 90px;
+    margin-left: 10px;
+  }
+  
+  .videotextContainer{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+  }
+  .listframe{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .player {
+    width: 780px;
+    max-height: 483px;
+    border: 5px solid rgba(0,0,0,0.2);
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    position: relative;
+    font-size: 0;
+    overflow: hidden;
+  }
+  
+  /* This css is only applied when fullscreen is active. */
+  .player:fullscreen {
+    max-width: none;
+    width: 100%;
+  }
+  
+  .player:-webkit-full-screen {
+    max-width: none;
+    width: 100%;
+  }
+  
+  .player__video {
+    width: 100%;
+  }
+  
+  .player__button {
+    background: none;
+    border: 0;
+    line-height: 1;
+    color: white;
+    text-align: center;
+    outline: 0;
+    padding: 0;
+    cursor: pointer;
+    max-width: 50px;
+  }
+  
+  .player__button:focus {
+    border-color: #ffc600;
+  }
+  
+  .player__slider {
+    width: 10px;
+    height: 30px;
+  }
+  .speed{
+    background: none;
+    border: 0;
+    line-height: 1;
+    color: white;
+    text-align: center;
+    outline: 0;
+    padding: 0;
+    cursor: pointer;
+    max-width: 60px;
+  }
+  .speed option{
+    color: black;
+  }
+  
+  .leftbarbutton{
+    background-color: white;
+    padding-right: 16px; 
+    font-size: 16px; 
+    cursor: pointer;
+    border:none;
+    outline: inherit;
+  }
+  .player__controls {
+    
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    transform: translateY(100%) translateY(-5px);
+    transition: all .3s;
+    flex-wrap: wrap;
+    background: rgba(0,0,0,0.1);
+  }
+  
+  .player:hover .player__controls {
+    transform: translateY(0);
+  }
+  
+  .player:hover .progress {
+    height: 15px;
+  }
+  
+  .player__controls > * {
+    flex: 1;
+  }
+  .LeftMenu{
+    margin-top: 56px;
+    position: fixed;
+    z-index :99999;
+    height: 100%;
+    width: 0px;
+    flex: 0.06;
+    background-color:  white;
+    -webkit-box-shadow: 0px 6px 5px 2px rgba(0,0,0,0.55);
+  -moz-box-shadow: 0px 6px 5px 2px rgba(0,0,0,0.55);
+  box-shadow: 0px 6px 5px 2px rgba(0,0,0,0.55);
+   
+  }
+  .LeftList{
+    visibility: hidden;
+  }
+  .progress {
+    flex: 10;
+    position: relative;
+    display: flex;
+    flex-basis: 100%;
+    height: 5px;
+    transition: height 0.3s;
+    background: rgba(0,0,0,0.5);
+    cursor: pointer;
+  }
+  
+  .progress__filled {
+    width: 50%;
+    background: #ffc600;
+    flex: 0;
+    flex-basis: 50%;
+  }
+  
+  /* unholy css to style input type="range" */
+  
+  input[type=range] {
+    -webkit-appearance: none;
+    background: transparent;
+    width: 100%;
+    margin: 0 5px;
+  }
+  
+  input[type=range]:focus {
+    outline: none;
+  }
+  
+  input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0), 0 0 1px rgba(13, 13, 13, 0);
+    background: rgba(255,255,255,0.8);
+    border-radius: 1.3px;
+    border: 0.2px solid rgba(1, 1, 1, 0);
+  }
+  
+  input[type=range]::-webkit-slider-thumb {
+    height: 15px;
+    width: 15px;
+    border-radius: 50px;
+    background: #ffc600;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -3.5px;
+    box-shadow:0 0 2px rgba(0,0,0,0.2);
+  }
+  
+  input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #bada55;
+  }
+  
+  input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0), 0 0 1px rgba(13, 13, 13, 0);
+    background: #ffffff;
+    border-radius: 1.3px;
+    border: 0.2px solid rgba(1, 1, 1, 0);
+  }
+  
+  input[type=range]::-moz-range-thumb {
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0), 0 0 0 rgba(13, 13, 13, 0);
+    height: 15px;
+    width: 15px;
+    border-radius: 50px;
+    background: #ffc600;
+    cursor: pointer;
+  }
+
+ .videoname{
+   display: flex;
+   flex-direction: column;
+   justify-content: left;
+   align-items: flex-start;
+   margin-left: 10px;
+   font-family: 'Jeju Gothic', sans-serif;
+ }
+
+ .videotitle{
+   font-weight: bold;
+   font-size: 25px;
+   color: black ;
+   
+ }
+ .videodiscription{
+  margin-left: 50px;
+  font-weight: bold;
+  font-size:15px;
+  color: #353535 ;
+ }
+ .username{
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bold;
+   font-size: 20px;
+ }
+ .videouserinfo{
+   display: flex;
+   flex-direction: column;
+
+ }
+.replybox{
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #959595 ;
+}
+#replys{
+  background-color: #EAE2E2;
+  border-radius: 10px;
+  
+}
+.replyinfo{
+  display: flex;
+  flex-direction: row;
+}
+
+ .replybox h4{
+   padding-left: 10px;
+
+ }
+ .replybox p{
+  padding-left: 10px;
+}
+.listimg{
+  margin: 10px;
+}

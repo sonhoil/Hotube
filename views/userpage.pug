@@ -1,0 +1,64 @@
+extends userpagelayout
+
+block content
+ include mainbar
+  div.LeftMenu
+    div.LeftList  
+     a asdasd  
+     a asdasd 
+     a asdasd 
+  div.main  
+    div.subtitle1  MY Profile
+    div.userbanner
+       if(image)
+        form(action='/userpage/updateprofile')(method="post", enctype="multipart/form-data")
+         img.userprofile(src=`data:image/png;base64,${image}`)
+         div
+          label(for="profile").label1 Find Photo
+          input.profile#profile(type="file",name="avatar",accept=".gif, .jpg, .png")
+          button Change
+ 
+        h1.username #{username}'s Page
+       else
+        form(action='/userpage/updateprofile')(method="post", enctype="multipart/form-data")
+         img.userprofile(src=`../images/coding.jpg`)
+         div
+          label(for="profile").label1 Find Photo
+          input.profile#profile(type="file",name="avatar",accept=".gif, .jpg, .png")
+          button Change
+        h1.username #{username}'s Page
+    div.subtitle2  ADD VIDEO    
+    div.uservideo
+    
+        canvas.canvas 
+        video.preview(src='')
+        form.videoinput(action='/userpage/uploadVideo')(method="post", enctype="multipart/form-data")
+         input.returnthumnail(type="text",name="image",value='')
+         label(for="files").label1 Find Video
+         input.getfile#files(type='file',name="video",accept=".mp4, .wmv, .avi, .mpg")
+         input.inputs#inputs1(type="text",name="title", placeholder="title")
+         textarea.inputs#inputs2(type="text",name="discription", placeholder="discription")
+         button ADD Video
+    div.subtitle3 MY Videos
+    div.playlist
+     each item in videos
+       div.video
+        div.videoDetail
+         if(item.thumnail)
+          img(src=`${item.thumnail}`)
+          div.listname
+            a(href=`/videopage/${item.postID}`).videoName=item.title
+            a=item.date          
+         else
+          img(src=`../images/coding.jpg`)
+          div.listname
+            a(href=`/videopage/${item.postID}`).videoName=item.title
+            a=item.date
+         form(action="/userpage/delete")(method="post")
+          input(type="hidden" name="videoID" value=`${item.postID}`)
+          button delete
+
+ div
+
+            
+   

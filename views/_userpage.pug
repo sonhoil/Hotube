@@ -1,0 +1,38 @@
+extends userpagelayout
+
+block content
+ include mainbar
+  div.LeftMenu
+    div.LeftList  
+     a asdasd  
+     a asdasd 
+     a asdasd 
+  div.main  
+    div.subtitle1  User Profile
+    div.userbanner
+       if(profile)
+        img.userprofile(src=`data:image/png;base64,${profile}`)
+        h1.username #{userinfo.nickname}'s Page
+       else
+        img.userprofile(src=`../images/coding.jpg`)
+        h1.username #{userinfo.nickname}'s Page
+
+    div.subtitle3 User Videos
+    div.playlist
+     each item in videoinfo
+       div.video
+        div.videoDetail
+         if(item.thumnail)
+          img(src=`${item.thumnail}`)
+          div.listname
+            a(href=`/videopage/${item.postID}`).videoName=item.title
+            a=item.date          
+         else
+          img(src=`../images/coding.jpg`)
+          div.listname
+            a(href=`/videopage/${item.postID}`).videoName=item.title
+            a=item.date
+ div
+
+            
+   

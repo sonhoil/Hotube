@@ -1,0 +1,18 @@
+extends loginLayout
+
+block content
+ include mainbar
+  div.main  
+    div.loginbox
+        form(action="/login/register_process")(method="post", enctype="multipart/form-data")
+            label.profileLabel(for="photoupload") Find Profile
+            input.inputs#photoupload(type="file",name="avatar",accept=".gif, .jpg, .png")
+            input.inputs(type="text",name="email", placeholder="ID")
+            input.inputs(type="password",name="password1", placeholder="Password")
+            input.inputs(type="password",name="password2", placeholder="Password")
+            input.inputs(type="text",name="nickname", placeholder="name")
+            button.inputs REGISTER
+  div
+
+            
+   

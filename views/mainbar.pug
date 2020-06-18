@@ -1,0 +1,37 @@
+#header
+  div.mainBar
+    div.LeftBar
+      div.menuBar
+       button.leftbarbutton
+          i.fa.fa-bars
+      div 
+       a.mainLogo(href="/") HoTube
+    div.CenterBar
+      div.SearchBox
+        form.SearchForm
+          input.searchBar(type="text")
+          button 찾기
+    div.RightBar
+      div.BarIcon1
+        button.icon
+          i.fa.fa-camera
+      div.BarIcon2
+        button.icon
+          i.fa.fa-bell
+      div.BarIcon3
+        if (login)
+         if(image)
+          a(href="/userpage")
+           img.profile(src=`data:image/png;base64,${image}`)
+          a.icon(href="/login/logout")
+           i.fa.fa-sign-out
+         else
+          a(href="/userpage")
+           img.profile(src=`../images/coding.jpg`)
+          a.icon(href="/login/logout")
+           i.fa.fa-sign-out 
+        else
+          a.icon(href="/login")
+           i.fa.fa-sign-in
+  div
+    div
